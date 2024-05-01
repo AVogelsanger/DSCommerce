@@ -18,7 +18,7 @@ public class User {
     @Column(unique = true)
     private String email;
     private String phone;
-    private LocalDate moment;
+    private LocalDate birthDate;
     private String password;
 
     @OneToMany(mappedBy = "client")
@@ -26,12 +26,12 @@ public class User {
 
     public User() { }
 
-    public User(Long id, String name, String email, String phone, LocalDate moment, String password) {
+    public User(Long id, String name, String email, String phone, LocalDate birthDate, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.moment = moment;
+        this.birthDate = birthDate;
         this.password = password;
     }
 
@@ -67,12 +67,12 @@ public class User {
         this.phone = phone;
     }
 
-    public LocalDate getMoment() {
-        return moment;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setMoment(LocalDate moment) {
-        this.moment = moment;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getPassword() {
@@ -107,7 +107,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", moment=" + moment +
+                ", birthDate=" + birthDate +
                 ", password='" + password + '\'' +
                 '}';
     }
